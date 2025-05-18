@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Finder</title>
+    <link rel="stylesheet" href="home.css" />
+    <script
+      src="https://unpkg.com/htmx.org@2.0.4"
+      integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanalei+Fill&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Space+Grotesk&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="header">
+      Book Pedia
+    </div>
+
+    <div class="content">
+      <form
+        class="search-form"
+        hx-get="/search"
+        hx-target="#book-result"
+        hx-swap="innerHTML"
+      >
+        <input
+          class="book"
+          type="text"
+          placeholder="book name..."
+          name="q"
+          required
+        />
+        <button type="submit" id="search">Search</button>
+      </form>
+      <div class="book-grid" id="book-result"></div>
+    </div>
+  </body>
+</html>
